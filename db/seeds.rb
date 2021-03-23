@@ -5,6 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Camper.destroy_all
+Activity.destroy_all
+Signup.destroy_all
+Camper.reset_pk_sequence
+Activity.reset_pk_sequence
+Signup.reset_pk_sequence
 
 
 Camper.create(name: 'Caitlin',age: 8)
@@ -26,11 +32,16 @@ Activity.create(name: 'Fencing', difficulty: 4)
 Activity.create(name: 'Canoeing', difficulty: 3)
 Activity.create(name: 'Windsurfing', difficulty: 5)
 
+# 20.times do
+#   Signup.create(camper_id: Camper.all.sample , activity_id: Activity.all.sample , time: (0..23).to_a.sample)
+
+
+
 
 # uncomment below to generate 50 join table instances
-# 50.times do 
-  # Signup.create(camper_id: Camper.all.sample.id, activity_id: Activity.all.sample.id, time: rand(0..24))
-# end 
+50.times do 
+  Signup.create(camper_id: Camper.all.sample.id, activity_id: Activity.all.sample.id, time: rand(0..24))
+end 
 
 
 

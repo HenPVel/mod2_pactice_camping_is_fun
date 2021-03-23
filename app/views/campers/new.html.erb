@@ -1,0 +1,9 @@
+<h1>Register A New Camper Here!</h1>
+
+<%= form_for @camper do |f|%>
+<%= f.label :name %>
+<%= f.text_field :name%>
+<%= f.label :age %>
+<%= f.select :age, (8..18).to_a%>
+<%= f.submit %>
+<% end %>

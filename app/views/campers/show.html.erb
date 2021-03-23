@@ -1,0 +1,11 @@
+<h1><%= @camper.name %>'s Profile Page</h1>
+
+<h3>Age: <%= @camper.age %></h3>
+
+<h3>List of Activities:</h3><br>
+
+<% @camper.activities.uniq.each do |a|%>
+<ul>
+<li><%= a.name %></li>
+</ul>
+<% end %>
